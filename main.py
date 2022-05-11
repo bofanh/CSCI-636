@@ -9,7 +9,19 @@ import nltk
 
 from sklearn.feature_extraction.text import CountVectorizer # return a vector array
 
+# Naive Bayes Classifier 
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.metrics import confusion_matrix, classification_report
+# Support Vector Machine 
+from sklearn.svm import SVC
+# K Neighbors Classifier
+
+# Gradient Boosting Classifier
+
+
+
 import pickle
+
 
 
 
@@ -96,6 +108,21 @@ from sklearn.model_selection import train_test_split
 
 
 
+# classiffier
+def classifing(X_train, y_train,X_test,y_test):
+    # Naive Bayes Classifier
+    nb = MultinomialNB()
+    nb.fit(X_train, y_train)
+    pred_nb = nb.predict(X_test)
+
+    # support vector machine
+
+
+
+
+
+
+
 
 
 def main(path, sel_list, des=False, dthead=False, n_head= False,n=10000):
@@ -123,10 +150,10 @@ def main(path, sel_list, des=False, dthead=False, n_head= False,n=10000):
     X = bow_transformer.transform(X)
     print("convertion finished")
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=46)
-    print("X_train: ", X_train.shape)
-    print("y_train: ", y_train.shape)
-    print("X_test: ", X_test.shape)
-    print("y_test" , y_test.shape)
+    print("X_train: \n", X_train.shape)
+    print("y_train: \n", y_train.shape)
+    print("X_test: \n", X_test.shape)
+    print("y_test: \n" , y_test.shape)
 
 
 
