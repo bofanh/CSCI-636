@@ -12,6 +12,7 @@
 
 ## Data Source: 
  [source](https://s3.amazonaws.com/amazon-reviews-pds/readme.html)
+ [source2](https://s3.amazonaws.com/amazon-reviews-pds/tsv/index.txt)
 
 
 ## procedure
