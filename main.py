@@ -137,7 +137,7 @@ def classifiers(X_train, y_train,X_test, X, y):
 
 
     # support vector machine
-    clf_svm = SVC() # classfiyer
+    clf_svm = SVC(kernel="rbf",C=500, gamma="auto") # classfiyer
     clf_svm.fit(X_train, y_train) 
     predsvm=clf_svm.predict(X_test)
     pickle.dump(clf_svm, open(model_svm, 'wb'))
@@ -290,6 +290,7 @@ def main(path, sel_list, des=False, dthead=False, n_head= False,n=10000):
     plt.bar(["Naive Bayes Classifier","support vector machine","KNeighborsClassifier","GradientBoostingClassifier"],[nbscore,svmscore,knnscore,gscscore])
     plt.ylabel('scores')
     plt.suptitle('Classifier Performance')
+    plt.ylim([0.8, 1])
     plt.show()
 
     print("--- %s seconds ---" % (time.time() - start_time))
